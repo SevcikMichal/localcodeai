@@ -96,7 +96,6 @@ export class OpenAICompatibleClient {
         }
     }
 
-    // FIM (Fill-In-the-Middle) completion for inline code suggestions
     async fimComplete(
         prefix: string,
         suffix: string,
@@ -129,7 +128,6 @@ export class OpenAICompatibleClient {
 
         const data = await response.json();
 
-        // llama.cpp / OpenAI-compatible completions response format
         const content = data.choices?.[0]?.text ?? '';
 
         return { content };

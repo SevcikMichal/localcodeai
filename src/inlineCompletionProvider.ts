@@ -2,10 +2,6 @@ import * as vscode from 'vscode';
 import { FIMContext, FIMContextCollector } from './editor/fimContextCollector';
 import { OpenAICompatibleClient } from './ai/client';
 
-/**
- * Request queue with cancellation.
- * Only the latest request is processed; all previous requests are cancelled.
- */
 class RequestQueue {
     private queue: Array<{
         document: vscode.TextDocument;
@@ -15,10 +11,6 @@ class RequestQueue {
     }> = [];
     private processing: boolean = false;
 
-    /**
-     * Add a request to the queue.
-     * All previous pending requests are cancelled.
-     */
     enqueue(
         document: vscode.TextDocument,
         position: vscode.Position
@@ -91,7 +83,7 @@ export class LocalCodeInlineCompletionProvider implements vscode.InlineCompletio
 
     constructor(aiClient: OpenAICompatibleClient, options?: { cooldownMs?: number }) {
         this.requestQueue.setAiClient(aiClient);
-        this.cooldownMs = options?.cooldownMs ?? 2000; // 2 seconds between requests
+        this.cooldownMs = options?.cooldownMs ?? 2000;
     }
 
     async provideInlineCompletionItems(
@@ -110,7 +102,7 @@ export class LocalCodeInlineCompletionProvider implements vscode.InlineCompletio
 
         clearTimeout(this.debounceTimer);
         await new Promise<void>((resolve) => {
-            this.debounceTimer = setTimeout(resolve, 500); // 500ms debounce
+            this.debounceTimer = setTimeout(resolve, 500);
         });
 
         if (token.isCancellationRequested) {

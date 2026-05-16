@@ -1,8 +1,8 @@
 import * as vscode from 'vscode';
 
 export interface FIMContext {
-    prefix: string;    // Code before cursor
-    suffix: string;    // Code after cursor
+    prefix: string;
+    suffix: string;
     language: string;
     filePath: string;
 }
@@ -26,23 +26,19 @@ export class FIMContextCollector {
         const position = this.position;
         const document = this.document;
 
-        // Get text before cursor (prefix)
         const prefixStart = document.positionAt(0);
         const prefixEnd = position;
         let prefix = document.getText(new vscode.Range(prefixStart, prefixEnd));
 
-        // Get text after cursor (suffix)
         const suffixStart = position;
         const suffixEnd = document.positionAt(document.getText().length);
         let suffix = document.getText(new vscode.Range(suffixStart, suffixEnd));
 
-        // Limit suffix size to avoid overwhelming the model
         const suffixLines = suffix.split('\n');
         if (suffixLines.length > maxContextLines) {
             suffix = suffixLines.slice(0, maxContextLines).join('\n');
         }
 
-        // Limit prefix size to avoid overwhelming the model
         const prefixLines = prefix.split('\n');
         if (prefixLines.length > maxContextLines) {
             prefix = prefixLines.slice(-maxContextLines).join('\n');
