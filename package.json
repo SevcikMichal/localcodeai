@@ -9,15 +9,11 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./out/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "localcodeai.helloWorld",
-        "title": "Hello World Something Else"
-      }
-    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
