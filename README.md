@@ -1,71 +1,25 @@
-# localcodeai README
+# localcodeai
 
-This is the README for your extension "localcodeai". After writing up a brief description, we recommend including the following sections.
+> **An experiment in local LLM-powered code assistance — a test for AI coding assistants.**
 
-## Features
+## What is this?
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+`localcodeai` is a proof-of-concept VS Code extension designed to test local LLM models running directly on your PC. Together with [Roo Code](https://github.com/RooCodeInc/Roo-Code), it creates a dummy extension that integrates local language models into VS Code, providing inline code completions and AI-assisted coding features — all without sending your code to external cloud services.
 
-For example if there is an image subfolder under your extension project workspace:
+Created primarily as a testing ground for local models and to understand how VS Code extensions work under the hood, this project serves as both a **test** for local AI coding assistants and a learning experience into extension development.
 
-\!\[feature X\]\(images/feature-x.png\)
+## Hardware
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+This experiment runs on:
 
-## Requirements
+| Component | Specification |
+|-----------|---------------|
+| **CPU** | AMD Ryzen 9 7900X (24) @ 5.74 GHz |
+| **GPU** | GeForce RTX 5070 Ti |
+| **RAM** | 32 GiB |
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## Purpose
 
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+- **Test local LLM models** — Evaluate how well open-source/local models handle code completion tasks
+- **Understand VS Code extension architecture** — Learn how the extension API works, from inline completion providers to context collection
+- **Privacy-first coding assistance** — Keep all code execution local, no data leaves your machine
