@@ -1,6 +1,6 @@
 # localcodeai
 
-> **An experiment in local LLM-powered code assistance — a test for AI coding assistants.**
+> **An experiment in local LLM-powered code assistance a test for AI coding assistants.**
 
 ## What is this?
 
@@ -20,6 +20,6 @@ This experiment runs on:
 
 ## Purpose
 
-- **Test local LLM models** — Evaluate how well open-source/local models handle code completion tasks
-- **Understand VS Code extension architecture** — Learn how the extension API works, from inline completion providers to context collection
-- **Privacy-first coding assistance** — Keep all code execution local, no data leaves your machine
+- **Test local LLM models**. Evaluate how well open-source/local models handle code completion tasks
+- **Understand VS Code extension architecture**. Learn how the extension API works, from inline completion providers to context collection
+- **Privacy-first coding assistance**. Keep all code execution local, no data leaves your machine
