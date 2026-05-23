@@ -40,16 +40,21 @@ Since this is a development/experimental extension, it's not published to the VS
    npm install
    ```
 
-2. **Build the extension package:**
+2. **Install vsce (VS Code Extension manager):**
    ```bash
-   npm pack
+   npm install -g @vscode/vsce
    ```
-   This creates a `.tgz` file (e.g., `localcodeai-0.0.1.tgz`).
 
-3. **Install into VS Code:**
+3. **Package the extension as .vsix:**
+   ```bash
+   vsce package
+   ```
+   This creates a `.vsix` file (e.g., `localcodeai-0.0.1.vsix`).
+
+4. **Install into VS Code:**
    - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS) to open the Command Palette
    - Type **"Extensions: Install from VSIX"**
-   - Select the generated `.tgz` file
+   - Select the generated `.vsix` file
 
 4. **Or run in development mode:**
    - Open this folder in VS Code
