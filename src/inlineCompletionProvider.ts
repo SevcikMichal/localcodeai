@@ -46,7 +46,7 @@ class RequestQueue {
                 const response = await this.aiClient.fimComplete(
                     fimContext.prefix,
                     fimContext.suffix,
-                    { maxTokens: 256, temperature: 0.6, instructions: "You are providing inline suggestion be concise and precise do not halucinate, do not repeat yourself." }
+                    { maxTokens: 256, temperature: 0.6, instructions: "You are providing inline suggestion be concise and precise do not halucinate, do not repeat yourself. Prefer code before TODO comments." }
                 );
 
                 if (request.cancelled || !response.content.trim()) {

@@ -23,3 +23,38 @@ This experiment runs on:
 - **Test local LLM models**. Evaluate how well open-source/local models handle code completion tasks
 - **Understand VS Code extension architecture**. Learn how the extension API works, from inline completion providers to context collection
 - **Privacy-first coding assistance**. Keep all code execution local, no data leaves your machine
+
+## Installation
+
+Since this is a development/experimental extension, it's not published to the VS Code Marketplace. Install it locally:
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or later)
+- [VS Code](https://code.visualstudio.com/)
+
+### Steps
+
+1. **Clone or download** this repository
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Compile the extension:**
+   ```bash
+   npm run compile
+   ```
+
+4. **Load into VS Code:**
+   - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS) to open the Command Palette
+   - Type **"Extensions: Install from VSIX"**
+   - Navigate to the `.vsix` file (build it first with `npm pack`, which creates `localcodeai-0.0.1.vsix`)
+   - Select the `.vsix` file to install
+
+   **Alternative — for development:**
+   - Open this folder in VS Code
+   - Press `F5` to launch a new VS Code window with the extension loaded in debug mode
+
+5. **Activate the extension** by opening a code file and typing — inline completions should appear if your local LLM is configured correctly.
