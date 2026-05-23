@@ -1,10 +1,10 @@
 # localcodeai
 
-> **An experiment in local LLM-powered code assistance a test for AI coding assistants.**
+> **An experiment in local LLM-powered code assistance — a test for AI coding assistants.**
 
 ## What is this?
 
-`localcodeai` is a proof-of-concept VS Code extension designed to test local LLM models running directly on your PC. Together with [Roo Code](https://github.com/RooCodeInc/Roo-Code), it creates a dummy extension that integrates local language models into VS Code, providing inline code completions all without sending your code to external cloud services.
+`localcodeai` is a proof-of-concept VS Code extension designed to test local LLM models running directly on your PC. Together with [Roo Code](https://github.com/RooCodeInc/Roo-Code), it creates a dummy extension that integrates local language models into VS Code, providing inline code completions and AI-assisted coding features — all without sending your code to external cloud services.
 
 Created primarily as a testing ground for local models and to understand how VS Code extensions work under the hood, this project serves as both a **test** for local AI coding assistants and a learning experience into extension development.
 
@@ -20,9 +20,9 @@ This experiment runs on:
 
 ## Purpose
 
-- **Test local LLM models**. Evaluate how well open-source/local models handle code completion tasks
-- **Understand VS Code extension architecture**. Learn how the extension API works, from inline completion providers to context collection
-- **Privacy-first coding assistance**. Keep all code execution local, no data leaves your machine
+- **Test local LLM models** — Evaluate how well open-source/local models handle code completion tasks
+- **Understand VS Code extension architecture** — Learn how the extension API works, from inline completion providers to context collection
+- **Privacy-first coding assistance** — Keep all code execution local, no data leaves your machine
 
 ## Installation
 
@@ -35,26 +35,22 @@ Since this is a development/experimental extension, it's not published to the VS
 
 ### Steps
 
-1. **Clone or download** this repository
-
-2. **Install dependencies:**
+1. **Install dependencies:**
    ```bash
    npm install
    ```
 
-3. **Compile the extension:**
+2. **Build the extension package:**
    ```bash
-   npm run compile
+   npm pack
    ```
+   This creates a `.tgz` file (e.g., `localcodeai-0.0.1.tgz`).
 
-4. **Load into VS Code:**
+3. **Install into VS Code:**
    - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS) to open the Command Palette
    - Type **"Extensions: Install from VSIX"**
-   - Navigate to the `.vsix` file (build it first with `npm pack`, which creates `localcodeai-0.0.1.vsix`)
-   - Select the `.vsix` file to install
+   - Select the generated `.tgz` file
 
-   **Alternative — for development:**
+4. **Or run in development mode:**
    - Open this folder in VS Code
-   - Press `F5` to launch a new VS Code window with the extension loaded in debug mode
-
-5. **Activate the extension** by opening a code file and typing — inline completions should appear if your local LLM is configured correctly.
+   - Press `F5` to launch a new VS Code window with the extension loaded
